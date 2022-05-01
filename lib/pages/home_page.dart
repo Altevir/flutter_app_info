@@ -35,141 +35,129 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              children: [
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: const Color(0xff3B3B3B),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(5, 10),
-                        blurRadius: 8,
-                      ),
-                    ],
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Container(
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6),
+                color: const Color(0xff3B3B3B),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.grey,
+                    offset: Offset(5, 10),
+                    blurRadius: 8,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'images/pubdev.png',
-                          height: 28,
-                          width: 28,
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const Text(
-                          'package_info_plus 1.4.2',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Kanit',
-                          ),
-                        )
-                      ],
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'images/pubdev.png',
+                      height: 28,
+                      width: 28,
                     ),
-                  ),
-                ),
-                const Spacer(),
-                InfoItem(
-                  title: 'Nome do aplicativo',
-                  subtitle: _packageInfo.appName,
-                  iconLeading: const Icon(
-                    Icons.new_releases_rounded,
-                    size: 40,
-                    color: Color(0xff3949ab),
-                  ),
-                ),
-                InfoItem(
-                  title: 'Nome do package',
-                  subtitle: _packageInfo.packageName,
-                  iconLeading: const Icon(
-                    Icons.new_releases_rounded,
-                    size: 40,
-                    color: Color(0xff3949ab),
-                  ),
-                ),
-                InfoItem(
-                  title: 'Versão',
-                  subtitle: _packageInfo.version,
-                  iconLeading: const Icon(
-                    Icons.new_releases_rounded,
-                    size: 40,
-                    color: Color(0xff3949ab),
-                  ),
-                ),
-                Visibility(
-                  visible: !kIsWeb && !Platform.isWindows,
-                  child: InfoItem(
-                    title: 'Número Build',
-                    subtitle: _packageInfo.buildNumber,
-                    iconLeading: const Icon(
-                      Icons.new_releases_rounded,
-                      size: 40,
-                      color: Color(0xff3949ab),
+                    const SizedBox(
+                      width: 10,
                     ),
-                  ),
+                    const Text(
+                      'package_info_plus 1.4.2',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Kanit',
+                      ),
+                    )
+                  ],
                 ),
-                const Spacer(),
-                const Text(
-                  'PLATAFORMAS SUPORTADAS',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Kanit',
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'images/android.png',
-                        width: 28,
-                        height: 28,
-                      ),
-                      Image.asset(
-                        'images/apple.png',
-                        width: 28,
-                        height: 28,
-                      ),
-                      Image.asset(
-                        'images/internet.png',
-                        width: 28,
-                        height: 28,
-                      ),
-                      Image.asset(
-                        'images/linux.png',
-                        width: 28,
-                        height: 28,
-                      ),
-                      Image.asset(
-                        'images/microsoft.png',
-                        width: 28,
-                        height: 28,
-                      ),
-                    ],
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
-          // Positioned(
-          //   right: -80,
-          //   top: MediaQuery.of(context).size.height * 0.18,
-          //   child: Image.asset(
-          //     'images/iphone.png',
-          //     fit: BoxFit.cover,
-          //   ),
-          // ),
-        ],
+            const Spacer(),
+            InfoItem(
+              title: 'Nome do aplicativo',
+              subtitle: _packageInfo.appName,
+              iconLeading: const Icon(
+                Icons.new_releases_rounded,
+                size: 40,
+                color: Color(0xff3949ab),
+              ),
+            ),
+            InfoItem(
+              title: 'Nome do package',
+              subtitle: _packageInfo.packageName,
+              iconLeading: const Icon(
+                Icons.new_releases_rounded,
+                size: 40,
+                color: Color(0xff3949ab),
+              ),
+            ),
+            InfoItem(
+              title: 'Versão',
+              subtitle: _packageInfo.version,
+              iconLeading: const Icon(
+                Icons.new_releases_rounded,
+                size: 40,
+                color: Color(0xff3949ab),
+              ),
+            ),
+            Visibility(
+              visible: !kIsWeb && !Platform.isWindows,
+              child: InfoItem(
+                title: 'Número Build',
+                subtitle: _packageInfo.buildNumber,
+                iconLeading: const Icon(
+                  Icons.new_releases_rounded,
+                  size: 40,
+                  color: Color(0xff3949ab),
+                ),
+              ),
+            ),
+            const Spacer(),
+            const Text(
+              'PLATAFORMAS SUPORTADAS',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Kanit',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, bottom: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'images/android.png',
+                    width: 28,
+                    height: 28,
+                  ),
+                  Image.asset(
+                    'images/apple.png',
+                    width: 28,
+                    height: 28,
+                  ),
+                  Image.asset(
+                    'images/internet.png',
+                    width: 28,
+                    height: 28,
+                  ),
+                  Image.asset(
+                    'images/linux.png',
+                    width: 28,
+                    height: 28,
+                  ),
+                  Image.asset(
+                    'images/microsoft.png',
+                    width: 28,
+                    height: 28,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
